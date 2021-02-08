@@ -1,0 +1,307 @@
+    @font-face {
+        font-family: "Lato";
+        src: url(/fonts/Lato/Lato-Regular.ttf) format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: "Amatic SC";
+        src: url(/fonts/AmaticSC/AmaticSC-Regular.ttf) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    html {
+        box-sizing: border-box;
+        user-select: none;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+    
+    body {
+        font-family: "Amatic SC", cursive;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: normal;
+        background: #ffc600;
+        background-image: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+        background-size: 200%;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: Gradient 10s ease infinite;
+        color: #FFFFFF;
+        margin: 0;
+    }
+    
+    .wrapper {
+        padding: 5px;
+    }
+    
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+    
+    @keyframes Appear {
+        0% {
+            visibility: hidden;
+            opacity: 0;
+        }
+        1% {
+            visibility: visible;
+            opacity: 0;
+        }
+        100% {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    /* Modal styles start*/
+    
+    .modal {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        animation: Appear 5s ease forwards;
+    }
+    
+    .modal::after {
+        content: "";
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    
+    .modal__content {
+        position: relative;
+        width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px 30px 15px;
+        background: #3f87a6;
+        background-image: url(/img/background/1117_oooo.plus.png);
+        background-size: 35%;
+        background-position: right 10% top 10%;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        z-index: 2;
+    }
+    
+    .modal__button:hover,
+    .modal__button:focus,
+    .modal__button:active {
+        cursor: pointer;
+        text-shadow: #FFFFFF 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
+    
+    .modal__button {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 120px;
+        height: 38px;
+        background: #f69d3c;
+        margin-top: 15px;
+        font-family: "Amatic SC", cursive;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 38px;
+        text-align: center;
+        color: #F2F2F2;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 5px;
+    }
+    
+    .modal__title {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.007em;
+        color: #F0D8D9;
+        font-family: "Amatic SC", cursive;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+        margin-bottom: -3px;
+    }
+    /* Modal styles end*/
+    /* Gallery styles start */
+    
+    .gallery {
+        margin: 0 auto;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .gallery__title {
+        text-align: right;
+        text-shadow: #3f87a6 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
+    
+    .slider {
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+    }
+    
+    .slide {
+        background: #6B0F9C;
+        box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+        color: white;
+        text-align: center;
+        align-items: center;
+        transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+        font-size: 20px;
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .slide1 {
+        background-image: url(/img/background/luxfon.com-1570.jpg);
+    }
+    
+    .slide2 {
+        background-image: url(/img/background/luxfon.com-22446.jpg);
+    }
+    
+    .slide3 {
+        background-image: url(/img/background/luxfon.com-35857.jpg);
+    }
+    
+    .slide4 {
+        background-image: url(/img/background/luxfon.com-27288.jpg);
+    }
+    
+    .slide5 {
+        background-image: url(/img/background/luxfon.com-22459.jpg);
+    }
+    
+    .slide6 {
+        background-image: url(/img/background/luxfon.com-1909.jpg);
+    }
+    
+    .slide7 {
+        background-image: url(/img/background/luxfon.com-7312.jpg);
+    }
+    
+    .slide8 {
+        background-image: url(/img/background/luxfon.com-38636.jpg);
+    }
+    
+    .slide>* {
+        margin: 0;
+        width: 100%;
+        transition: transform 0.5s;
+        flex: 1 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .slide>*:first-child {
+        transform: translateY(-100%);
+    }
+    
+    .slide__active>*:first-child {
+        transform: translateY(0);
+    }
+    
+    .slide>*:last-child {
+        transform: translateY(100%);
+    }
+    
+    .slide__active>*:last-child {
+        transform: translateY(0);
+    }
+    
+    .slide__title,
+    .slide__subtitle {
+        text-transform: uppercase;
+        font-family: 'Amatic SC', cursive;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+        font-size: 1em;
+    }
+    
+    .slide__title {
+        font-size: 2em;
+    }
+    
+    .slide__title:hover {
+        font-size: 2.2em;
+        cursor: pointer;
+        text-shadow: #FFFFFF 0 0 10px, 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    }
+    
+    .open__slide {
+        flex: 5;
+        font-size: 40px;
+    }
+    /* Gallery styles end */
+    
+    @media screen and (max-width: 768px) and (min-width: 530px) {
+        .slide__title,
+        .slide__subtitle {
+            font-size: 0.8em;
+        }
+        .slide__title {
+            font-size: 1.5em;
+        }
+        .slide__title:hover {
+            font-size: 1.7em;
+        }
+        .open__slide {
+            font-size: 30px;
+        }
+    }
+    
+    @media screen and (max-width: 529px) and (min-width: 375px) {
+        .slide__title,
+        .slide__subtitle {
+            font-size: 0.6em;
+        }
+        .slide__title {
+            font-size: 1.1em;
+        }
+        .slide__title:hover {
+            font-size: 1.2em;
+        }
+        .open__slide {
+            font-size: 20px;
+        }
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .block {
+        display: block;
+    }
